@@ -20,9 +20,12 @@ resource "aws_lambda_function" "hello_world" {
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
 }
+resource "random_id" "role_suffix" {
+  byte_length = 4
+}
 
 resource "aws_iam_role" "lambda_exec" {
-  name = "rger_lambda_exec_role"
+  name = "lambda_exec_role_${random_id.role_suffix.hex}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
