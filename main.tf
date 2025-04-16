@@ -22,7 +22,7 @@ resource "aws_lambda_function" "hello_world" {
 }
 
 resource "aws_iam_role" "lambda_exec" {
-  name = "lambda_exec_role"
+  name = "rger_lambda_exec_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

@@ -5,10 +5,10 @@ variable "aws_region" {
 
 variable "lambda_runtime" {
   description = "Lambda runtime"
-  default     = "nodejs14.x" # or "python3.9"
+  default     = "python3.9" # or "nodejs20.x"
 }
 
 variable "lambda_handler" {
   description = "Lambda handler"
-  default     = "index.handler" # or "main.lambda_handler" for Python
+  default     = "main.lambda_handler" # or "index.handler" for Nodejs
 }
